@@ -1,0 +1,29 @@
+header {
+    background-image: url("http://media-cdn.tripadvisor.com/media/photo-s/03/df/96/ad/furama-resort-danang.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.size-logo{
+    width: 200px;
+}
+.navbar {
+    background-color: transparent !important; /* Loại bỏ nền màu của navbar */
+}
+
+nav.navbar {
+    justify-content: space-between;
+}
+.size-photo{
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}

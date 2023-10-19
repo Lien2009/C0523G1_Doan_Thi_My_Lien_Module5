@@ -29,7 +29,7 @@ function Student(){
                     <th>Address</th>
                 </tr>
                     {students.map(student => (
-                        <tr>
+                        <tr key={student.Id}>
                             <td>{student.Id}</td>
                             <td>{student.Name}</td>
                             <td>{student.Age}</td>

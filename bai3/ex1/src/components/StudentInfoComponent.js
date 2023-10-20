@@ -22,20 +22,25 @@ function Student(){
     return(
         <div className="container">
             <table>
+                <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Address</th>
                 </tr>
-                    {students.map(student => (
-                        <tr key={student.id}>
-                            <td>{student.id}</td>
-                            <td>{student.name}</td>
-                            <td>{student.age}</td>
-                            <td>{student.address}</td>
-                        </tr>
-                    ))}
+                </thead>
+                <tbody>
+                {students.map(student => (
+                    <tr key={student.id}>
+                        <td>{student.id}</td>
+                        <td>{student.name}</td>
+                        <td>{student.age}</td>
+                        <td>{student.address}</td>
+                    </tr>
+                ))}
+                </tbody>
+
             </table>
         </div>
     )

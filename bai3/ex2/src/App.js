@@ -28,17 +28,22 @@ class App extends Component {
                         <h1>Todo List</h1>
                     </div>
                     <div>
-                        <input onChange={(text) => this.handleChange(text)} />
+                        <input onChange={(text)=> {
+                            this.handleChange(text);
+                        }}
+                        />
                         <button onClick={this.handleAddItem}>Add</button>
                     </div>
                     <div>
                         <h3>ToDo List</h3>
                         <table>
+                            <tbody>
                             {this.state.list.map((task,index) => (
                                 <tr key={index}>
                                     <td>{task}</td>
                                 </tr>
                             ))}
+                            </tbody>
                         </table>
                     </div>
                 </center>

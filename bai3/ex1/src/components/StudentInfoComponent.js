@@ -1,21 +1,21 @@
 const students = [
     {
-        Id: 1,
-        Name: 'Mỹ Hạnh',
-        Age: 20,
-        Address: 'Quảng Nam'
+        id: 1,
+        name: 'Mỹ Hạnh',
+        age: 20,
+        address: 'Quảng Nam'
     },
     {
-        Id: 2,
-        Name: 'Trần Chánh',
-        Age: 30,
-        Address: 'Đà Nẵng'
+        id: 2,
+        name: 'Trần Chánh',
+        age: 30,
+        address: 'Đà Nẵng'
     },
     {
-        Id: 3,
-        Name: 'Đoàn Liên',
-        Age: 27,
-        Address: 'Đà Nẵng'
+        id: 3,
+        name: 'Đoàn Liên',
+        age: 27,
+        address: 'Đà Nẵng'
     }
 ];
 function Student(){
@@ -29,11 +29,11 @@ function Student(){
                     <th>Address</th>
                 </tr>
                     {students.map(student => (
-                        <tr key={student.Id}>
-                            <td>{student.Id}</td>
-                            <td>{student.Name}</td>
-                            <td>{student.Age}</td>
-                            <td>{student.Address}</td>
+                        <tr key={student.id}>
+                            <td>{student.id}</td>
+                            <td>{student.name}</td>
+                            <td>{student.age}</td>
+                            <td>{student.address}</td>
                         </tr>
                     ))}
             </table>

@@ -4,7 +4,7 @@ function Card(){
             <div className="card size-card">
                 <a href="#">
                     <img className="size-photo"
-                         src="https://khachsandanang.info/wp-content/uploads/2015/03/48-1.jpg"
+                         src=""
                          className="card-img-top" alt="..."/>
                 </a>
                 <div className="card-body">

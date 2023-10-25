@@ -1,7 +1,8 @@
 import axios from "axios";
 const URL_CUSTOMER = "http://localhost:8080/customers/"
 const URL_TYPE_CUSTOMER = "http://localhost:8080/typeCustomer/"
-export const getAll = async () => {
+export const getAll =
+    async () => {
     try{
         const res = await axios.get(URL_CUSTOMER)
         return res.data;
@@ -9,6 +10,7 @@ export const getAll = async () => {
         alert("Hiển thị bị lỗi!")
     }
 }
+//heo
 export const addCustomer = async (customer) => {
     try {
         return await axios.post(URL_CUSTOMER, customer)

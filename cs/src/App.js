@@ -8,6 +8,10 @@ import {Route, Routes} from "react-router-dom";
 import FacilityList from "./components/facility/FacilityList";
 import CustomerList from "./components/customer/CustomerList";
 import ContractList from "./components/contract/ContractList";
+import {ToastContainer} from "react-toastify";
+import {CreateCustomer} from "./components/customer/CreateCustomer";
+import "react-toastify/dist/ReactToastify.css"
+import {UpdateCustomer} from "./components/customer/UpdateCustomer";
 
 
 function App() {
@@ -15,12 +19,15 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path="/facilities" element={<FacilityList/>}/>
+                <Route path="/" element={<FacilityList/>}/>
                 <Route path="/customers" element={<CustomerList/>}/>
+                <Route path="/customers/create" element={<CreateCustomer/>}/>
+                <Route path="/customers/update/:id" element={<UpdateCustomer/>}/>
                 <Route path="/contracts" element={<ContractList/>}/>
             </Routes>
             <PageList/>
             <Footer/>
+            <ToastContainer/>
         </div>
     );
 }

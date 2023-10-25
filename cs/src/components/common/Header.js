@@ -1,4 +1,4 @@
-import {Routes, Route, Link} from "react-router-dom";
+import {Routes, Route, Link, NavLink} from "react-router-dom";
 
 
 function Header() {
@@ -19,23 +19,23 @@ function Header() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link">
-                                <Link to="/facilities" className="style-link">
+                                <NavLink to="/" className="style-link">
                                     Facilities
-                                </Link>
+                                </NavLink>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link">
-                                <Link to="/customers" className="style-link">
+                                <NavLink to="/customers" className="style-link">
                                     Customers
-                                </Link>
+                                </NavLink>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link">
-                                <Link to="/contracts" className="style-link">
+                                <NavLink to="/contracts" className="style-link">
                                     Contracts
-                                </Link>
+                                </NavLink>
                             </a>
                         </li>
                     </ul>

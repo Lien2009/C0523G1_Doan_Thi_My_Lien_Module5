@@ -1,0 +1,120 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Liên",
+      "dateOfBirth": "1996-09-20",
+      "gender": "0",
+      "identity": "012345678",
+      "phone": "0705995801",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 1,
+        "name": "PLATINUM"
+      },
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Hạnh",
+      "dateOfBirth": "2000-09-20",
+      "gender": "0",
+      "identity": "012345678",
+      "phone": "0705995801",
+      "email": "hanh@gmail.com",
+      "typeCustomer": {
+        "id": 1,
+        "name": "PLATINUM"
+      },
+      "address": "Hội An"
+    },
+    {
+      "id": 3,
+      "name": "Long11112222",
+      "dateOfBirth": "1998-01-01",
+      "gender": "1",
+      "identity": "012345678",
+      "phone": "0705995801",
+      "email": "long@gmail.com",
+      "typeCustomer": {
+        "id": 1,
+        "name": "PLATINUM"
+      },
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "name": "Thiện",
+      "dateOfBirth": "1995-06-01",
+      "gender": "1",
+      "identity": "012345678",
+      "phone": "0705995801",
+      "email": "thien@gmail.com",
+      "typeCustomer": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "address": "Quảng Bình"
+    },
+    {
+      "id": 5,
+      "name": "liên123",
+      "dateOfBirth": "2023-10-04",
+      "gender": "0",
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 3,
+        "name": "GOLD"
+      },
+      "address": "1233"
+    },
+    {
+      "name": "Bánh bao",
+      "dateOfBirth": "2023-09-29",
+      "gender": "",
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 2,
+        "name": "DIAMOND"
+      },
+      "address": "1233",
+      "id": 6
+    },
+    {
+      "name": "liên",
+      "dateOfBirth": "2023-10-03",
+      "gender": "0",
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 1,
+        "name": "PLATINUM"
+      },
+      "address": "1233",
+      "id": 7
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "PLATINUM"
+    },
+    {
+      "id": 2,
+      "name": "DIAMOND"
+    },
+    {
+      "id": 3,
+      "name": "GOLD"
+    },
+    {
+      "id": 4,
+      "name": "MEMBER"
+    }
+  ]
+}

@@ -1,16 +1,15 @@
 import axios from "axios";
-const URL_CUSTOMER = "http://localhost:8080/customers/"
-const URL_TYPE_CUSTOMER = "http://localhost:8080/typeCustomer/"
-export const getAll =
-    async () => {
+const URL_CUSTOMER = "http://localhost:8080/customers"
+const URL_TYPE_CUSTOMER = "http://localhost:8080/typeCustomer"
+export const getAll = async (name, typeCustomer, currentPage) => {
     try{
-        const res = await axios.get(URL_CUSTOMER)
-        return res.data;
+        const res = await axios.get(URL_CUSTOMER+`?name_like=${name}&typeCustomer.name_like=${typeCustomer}&_page=${currentPage}&_limit=5`)
+        return res;
     }catch (e){
         alert("Hiển thị bị lỗi!")
     }
 }
-//heo
+
 export const addCustomer = async (customer) => {
     try {
         return await axios.post(URL_CUSTOMER, customer)
@@ -28,7 +27,7 @@ export const getTypeCustomer = async ()=> {
 }
 export const findById = async (id) => {
     try {
-        const res = await axios.get(URL_CUSTOMER + id);
+        const res = await axios.get(URL_CUSTOMER + `/${id}`);
         return res.data
     }catch (e){
         alert("Tìm khách bị lỗi!")
@@ -36,14 +35,14 @@ export const findById = async (id) => {
 }
 export const updateCustomer = async (customer) => {
     try {
-        return await axios.put(URL_CUSTOMER + customer.id, customer)
+        return await axios.put(URL_CUSTOMER + `/${customer.id}`, customer)
     } catch (e) {
         alert("Lỗi rồi!")
     }
 }
 export const deleteCustomer = async (id) => {
     try {
-        return await axios.delete(URL_CUSTOMER+ id)
+        return await axios.delete(URL_CUSTOMER+ `/${id}`)
     } catch (e) {
         alert("Lỗi rồi!")
     }

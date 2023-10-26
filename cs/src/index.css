@@ -31,11 +31,21 @@ footer {
     text-align: center;
     height: 50px;
     padding: 10px;
-    /*position: fixed;*/
+    position: fixed;
     bottom: 0;
     width: 100%
 }
 .style-link{
     text-decoration: none;
-    color: goldenrod
+    color: goldenrod;
+}
+.form-label{
+    font-weight: bold;
+}
+.mb-3{
+    text-align: left;
+}
+.on {
+    background-color: deepskyblue;
+    color: white;
 }

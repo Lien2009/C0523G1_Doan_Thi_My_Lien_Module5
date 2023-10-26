@@ -12,6 +12,8 @@ import {ToastContainer} from "react-toastify";
 import {CreateCustomer} from "./components/customer/CreateCustomer";
 import "react-toastify/dist/ReactToastify.css"
 import {UpdateCustomer} from "./components/customer/UpdateCustomer";
+import {CreateContract} from "./components/contract/CreateContract";
+import {UpdateContract} from "./components/contract/UpdateContract";
 
 
 function App() {
@@ -24,8 +26,9 @@ function App() {
                 <Route path="/customers/create" element={<CreateCustomer/>}/>
                 <Route path="/customers/update/:id" element={<UpdateCustomer/>}/>
                 <Route path="/contracts" element={<ContractList/>}/>
+                <Route path="/contracts/create" element={<CreateContract/>}/>
+                <Route path="/contracts/update/:id" element={<UpdateContract/>}/>
             </Routes>
-            <PageList/>
             <Footer/>
             <ToastContainer/>
         </div>

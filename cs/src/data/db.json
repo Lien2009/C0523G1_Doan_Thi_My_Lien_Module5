@@ -9,8 +9,8 @@
       "phone": "0705995801",
       "email": "mylien200996@gmail.com",
       "typeCustomer": {
-        "id": 1,
-        "name": "PLATINUM"
+        "id": 3,
+        "name": "GOLD"
       },
       "address": "Đà Nẵng"
     },
@@ -83,20 +83,6 @@
       },
       "address": "1233",
       "id": 6
-    },
-    {
-      "name": "liên",
-      "dateOfBirth": "2023-10-03",
-      "gender": "0",
-      "identity": "1213",
-      "phone": "0705995800",
-      "email": "mylien200996@gmail.com",
-      "typeCustomer": {
-        "id": 1,
-        "name": "PLATINUM"
-      },
-      "address": "1233",
-      "id": 7
     }
   ],
   "typeCustomer": [
@@ -115,6 +101,40 @@
     {
       "id": 4,
       "name": "MEMBER"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "contractNumber": "HD-001",
+      "startDate": "2023-09-20",
+      "endDate": "2023-09-22",
+      "deposit": 1000000,
+      "cost": 2000000
+    },
+    {
+      "id": 2,
+      "contractNumber": "HD-002",
+      "startDate": "2023-09-30",
+      "endDate": "2023-10-01",
+      "deposit": 1000000,
+      "cost": 2000000
+    },
+    {
+      "id": 3,
+      "contractNumber": "HD-003",
+      "startDate": "2023-09-01",
+      "endDate": "2023-09-10",
+      "deposit": 1000000,
+      "cost": 2000000
+    },
+    {
+      "id": 4,
+      "contractNumber": "HD-004",
+      "startDate": "2023-09-20",
+      "endDate": "2023-09-25",
+      "deposit": 1000000,
+      "cost": 5000000
     }
   ]
 }

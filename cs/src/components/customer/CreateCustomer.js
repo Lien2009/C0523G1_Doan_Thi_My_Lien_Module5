@@ -80,9 +80,7 @@ export function CreateCustomer() {
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>Gender</label>
-                            <Field as="select" className='form-control' name="gender" style={{
-                                textAlign: 'center',
-                            }}>
+                            <Field as="select" className='form-control' name="gender">
                                 <option className="option" value>--Gender--</option>
                                 <option className="option" value="0">Nữ</option>
                                 <option className="option" value="1">Nam</option>
@@ -106,9 +104,7 @@ export function CreateCustomer() {
                         </div>
                         <div className='mb-3'>
                             <label>Loại khách</label>
-                            <Field as="select" className='form-control' name="typeCustomer" style={{
-                                textAlign: 'center'
-                            }}>
+                            <Field as="select" className='form-control' name="typeCustomer">
                                 {
                                     types.map(type => (
                                         <option key={type.id} value={JSON.stringify(type)}>{type.name}</option>

@@ -56,7 +56,7 @@ export function UpdateCustomer() {
         address: Yup.string()
             .required("Không để trống trường này!")
     };
-    const initialValues = customer ? {
+    const initialValues = customer && {
         id: customer.id,
         name: customer.name,
         dateOfBirth: customer.dateOfBirth,
@@ -66,18 +66,6 @@ export function UpdateCustomer() {
         email: customer.email,
         typeCustomer: JSON.stringify(customer.typeCustomer),
         address: customer.address
-    } :{
-        name: "",
-        dateOfBirth: "",
-        gender: "",
-        identity: "",
-        phone: "",
-        email: "",
-        typeCustomer: JSON.stringify({
-            id: 4,
-            name: "MEMBER"
-        }),
-        address: ""
     }
     return (
         customer ? (
@@ -92,7 +80,7 @@ export function UpdateCustomer() {
                     <h1>Sửa khách hàng</h1>
                     <Form>
                         <div className='mb-3'>
-                            <label htmlFor='name' className='form-label'>Họ tên</label>
+                            <label htmlFor='name' className='form-label' >Họ tên</label>
                             <Field type='text' name="name" className='form-control' id='name'/>
                             <ErrorMessage name="name" component="span" style={{color: "red"}}></ErrorMessage>
                         </div>
@@ -103,9 +91,7 @@ export function UpdateCustomer() {
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>Gender</label>
-                            <Field as="select" className='form-control' name="gender" style={{
-                                textAlign: 'center',
-                            }}>
+                            <Field as="select" className='form-control' name="gender">
                                 <option className="option" value>--Gender--</option>
                                 <option className="option" value="0">Nữ</option>
                                 <option className="option" value="1">Nam</option>
@@ -128,10 +114,8 @@ export function UpdateCustomer() {
                             <ErrorMessage name="email" component="span" style={{color: "red"}}></ErrorMessage>
                         </div>
                         <div className='mb-3'>
-                            <label>Loại khách</label>
-                            <Field as="select" className='form-control' name="typeCustomer" style={{
-                                textAlign: 'center'
-                            }}>
+                            <label className='form-label'>Loại khách</label>
+                            <Field as="select" className='form-control' name="typeCustomer">
                                 {
                                     types.map(type => (
                                         <option key={type.id} value={JSON.stringify(type)}>{type.name}</option>
@@ -150,6 +134,6 @@ export function UpdateCustomer() {
                 </div>
             </Formik>
         </>
-        ) : ("trống")
+        ) : ("Không có KH")
     )
 }

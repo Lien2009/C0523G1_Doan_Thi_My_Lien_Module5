@@ -1,21 +1,23 @@
-function PageList(){
+function PageList(page){
+    const {currentPage,totalItem,onPageChange } = page;
+    const totalPages = Math.ceil(totalItem/5);
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(
+            <button
+            key={i}
+            onClick={() => onPageChange(i)}
+            className={currentPage === i ?"on":""}
+            >{i}</button>
+        );
+    }
     return(
         <div>
             <nav style={{marginLeft: "200px", marginTop: "20px"}} aria-label="Page navigation example">
                 <ul className="pagination" style={{marginLeft: "37%"}}>
-                    <li className="page-item">
-                        <a className="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li className="page-item"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item">
-                        <a className="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
+                    {pageNumbers.map(page =>(
+                        <li className="page-item">{page}</li>
+                    ))}
                 </ul>
             </nav>
         </div>

@@ -1,18 +1,18 @@
 import axios from "axios";
 
-const URL_VILLA = "http://localhost:8080/villas"
+const URL_ROOM = "http://localhost:8080/rooms"
 const URL_TYPE_RENT = "http://localhost:8080/typeRent/"
 export const getAll = async (currentPage, sizePage) => {
     try{
-        const res = await axios.get(URL_VILLA+`?_page=${currentPage}&_limit=${sizePage}`);
+        const res = await axios.get(URL_ROOM+`?_page=${currentPage}&_limit=${sizePage}`);
         return res;
     }catch (e) {
         alert("Hiển thị lỗi!")
     }
 }
-export const addVilla = async (villa) => {
+export const addRoom = async (room) => {
     try {
-        return await axios.post(URL_VILLA, villa)
+        return await axios.post(URL_ROOM, room)
     } catch (e) {
         alert("Thêm bị lỗi!")
     }
@@ -26,22 +26,22 @@ export const getAllTypes = async () => {
 }
 export const findById = async (id) => {
     try {
-        const res = await axios.get(URL_VILLA + `/${id}`);
+        const res = await axios.get(URL_ROOM + `/${id}`);
         return res.data
     }catch (e){
-        alert("Tìm villa bị lỗi!")
+        alert("Tìm room bị lỗi!")
     }
 }
-export const updateVilla = async (villa) => {
+export const updateRoom = async (room) => {
     try {
-        return await axios.put(URL_VILLA + `/${villa.id}`, villa)
+        return await axios.put(URL_ROOM + `/${room.id}`, room)
     } catch (e) {
         alert("Lỗi rồi!")
     }
 }
-export const deleteVilla = async (id) => {
+export const deleteRoom = async (id) => {
     try {
-        return await axios.delete(URL_VILLA+ `/${id}`)
+        return await axios.delete(URL_ROOM+ `/${id}`)
     } catch (e) {
         alert("Lỗi rồi!")
     }

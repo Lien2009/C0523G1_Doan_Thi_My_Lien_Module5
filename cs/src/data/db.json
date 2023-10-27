@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Liên",
       "dateOfBirth": "1996-09-20",
-      "gender": "0",
+      "gender": 0,
       "identity": "012345678",
       "phone": "0705995801",
       "email": "mylien200996@gmail.com",
@@ -18,7 +18,7 @@
       "id": 2,
       "name": "Hạnh",
       "dateOfBirth": "2000-09-20",
-      "gender": "0",
+      "gender": 0,
       "identity": "012345678",
       "phone": "0705995801",
       "email": "hanh@gmail.com",
@@ -30,15 +30,15 @@
     },
     {
       "id": 3,
-      "name": "Long11112222",
+      "name": "Long",
       "dateOfBirth": "1998-01-01",
-      "gender": "1",
+      "gender": 1,
       "identity": "012345678",
       "phone": "0705995801",
       "email": "long@gmail.com",
       "typeCustomer": {
-        "id": 1,
-        "name": "PLATINUM"
+        "id": 2,
+        "name": "DIAMOND"
       },
       "address": "Đà Nẵng"
     },
@@ -46,7 +46,7 @@
       "id": 4,
       "name": "Thiện",
       "dateOfBirth": "1995-06-01",
-      "gender": "1",
+      "gender": 1,
       "identity": "012345678",
       "phone": "0705995801",
       "email": "thien@gmail.com",
@@ -60,7 +60,7 @@
       "id": 5,
       "name": "liên123",
       "dateOfBirth": "2023-10-04",
-      "gender": "0",
+      "gender": 0,
       "identity": "1213",
       "phone": "0705995800",
       "email": "mylien200996@gmail.com",
@@ -73,7 +73,7 @@
     {
       "name": "Bánh bao",
       "dateOfBirth": "2023-09-29",
-      "gender": "",
+      "gender": 1,
       "identity": "1213",
       "phone": "0705995800",
       "email": "mylien200996@gmail.com",
@@ -83,6 +83,76 @@
       },
       "address": "1233",
       "id": 6
+    },
+    {
+      "name": "liên",
+      "dateOfBirth": "2023-10-04",
+      "gender": 0,
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "address": "1233",
+      "id": 7
+    },
+    {
+      "name": "Bánh bao",
+      "dateOfBirth": "2023-10-05",
+      "gender": 0,
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 2,
+        "name": "DIAMOND"
+      },
+      "address": "1233",
+      "id": 8
+    },
+    {
+      "name": "A thousand yea",
+      "dateOfBirth": "2023-10-07",
+      "gender": "0",
+      "identity": "121300",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "address": "1233",
+      "id": 9
+    },
+    {
+      "name": "liên333333333",
+      "dateOfBirth": "2023-10-13",
+      "gender": "1",
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "address": "1233",
+      "id": 12
+    },
+    {
+      "name": "liên222222",
+      "dateOfBirth": "2023-10-05",
+      "gender": "0",
+      "identity": "1213",
+      "phone": "0705995800",
+      "email": "mylien200996@gmail.com",
+      "typeCustomer": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "address": "1233",
+      "id": 13
     }
   ],
   "typeCustomer": [
@@ -131,10 +201,156 @@
     {
       "id": 4,
       "contractNumber": "HD-004",
-      "startDate": "2023-09-20",
-      "endDate": "2023-09-25",
+      "startDate": "2023-09-25",
+      "endDate": "2023-09-28",
       "deposit": 1000000,
       "cost": 5000000
+    },
+    {
+      "contractNumber": "HD-006",
+      "startDate": "2023-10-29",
+      "endDate": "2023-10-30",
+      "deposit": 500000,
+      "cost": 1500000,
+      "id": 5
+    },
+    {
+      "contractNumber": "HD-007",
+      "startDate": "2023-11-18",
+      "endDate": "2023-11-19",
+      "deposit": 500000,
+      "cost": 1500000,
+      "id": 6
+    }
+  ],
+  "typeRent": [
+    {
+      "id": 1,
+      "name": "năm"
+    },
+    {
+      "id": 2,
+      "name": "tháng"
+    },
+    {
+      "id": 3,
+      "name": "ngày"
+    },
+    {
+      "id": 4,
+      "name": "giờ"
+    }
+  ],
+  "villas": [
+    {
+      "id": 2,
+      "name": "GARDEN SUPERIOR",
+      "area": 40,
+      "cost": 2000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 1,
+        "name": "năm"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2015/03/48-1.jpg",
+      "standard": "deluxe",
+      "description": "aaaaaaa",
+      "poolArea": 20,
+      "floor": 1
+    },
+    {
+      "id": 4,
+      "name": "GARDEN SUPERIOR",
+      "area": 40,
+      "cost": 2000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 1,
+        "name": "năm"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2015/03/48-1.jpg",
+      "standard": "deluxe",
+      "description": "aaaaaaa",
+      "poolArea": 20,
+      "floor": 1
+    },
+    {
+      "id": 5,
+      "name": "Ocean Villa",
+      "area": 30,
+      "cost": 2000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 3,
+        "name": "ngày"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2015/03/48-1.jpg",
+      "standard": "Vip",
+      "description": "Rất là đẹp nha",
+      "poolArea": 0,
+      "floor": 0
+    }
+  ],
+  "houses": [
+    {
+      "id": 3,
+      "name": "GARDEN HOUSE",
+      "area": 40,
+      "cost": 2000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 1,
+        "name": "năm"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2016/06/6-750x400.jpg",
+      "standard": "deluxe",
+      "description": "aaaaaaa",
+      "floor": 1
+    },
+    {
+      "id": 5,
+      "name": "Ocean House",
+      "area": 15,
+      "cost": 1000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 2,
+        "name": "tháng"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2016/06/9-750x400.jpg",
+      "standard": "Superior",
+      "description": "Đẹp lắm",
+      "floor": 3
+    },
+    {
+      "id": 6,
+      "name": "Ocean House",
+      "area": 40,
+      "cost": 1500000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 4,
+        "name": "giờ"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2016/06/6-750x400.jpg",
+      "standard": "Superior",
+      "description": "đẹp",
+      "floor": 1
+    }
+  ],
+  "rooms": [
+    {
+      "id": 4,
+      "name": "GARDEN ROOM",
+      "area": 40,
+      "cost": 2000000,
+      "capacity": 2,
+      "typeRent": {
+        "id": 1,
+        "name": "năm"
+      },
+      "image": "https://khachsandanang.info/wp-content/uploads/2015/03/48-1.jpg",
+      "service": "nước trái cây"
     }
   ]
 }

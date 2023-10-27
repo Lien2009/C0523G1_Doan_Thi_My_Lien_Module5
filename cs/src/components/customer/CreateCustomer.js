@@ -28,24 +28,32 @@ export function CreateCustomer() {
         }),
         address: ""
     };
+    // validate tuổi > 18
+    const d = new Date();
+    const date = (d.getFullYear() - 18) + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+
     const validateObject = {
         name: Yup.string()
-            .required("Không để trống trường này!"),
-        dateOfBirth: Yup.string()
-            .required("Không để trống trường này!"),
+            .required("Không để trống trường này!")
+            .matches(/^[A-Za-z ]*$/, "Không đúng định dạng!"),
+        dateOfBirth: Yup.date()
+            .required("Không để trống trường này!")
+            .max(date, "Your age must be greater than 18"),
         identity: Yup.string()
             .required("Không để trống trường này!"),
         phone: Yup.string()
+            .required("Không để trống trường này!")
+            .matches(/^090\d{7}$/,"Không đúng format!"),
+        gender: Yup.string()
             .required("Không để trống trường này!"),
         email: Yup.string()
             .required("Không để trống trường này!")
             .matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, "Không đúng định dạng!"),
-        // typeCustomer: Yup.string()
-        //     .required("Không để trống trường này!"),
         address: Yup.string()
             .required("Không để trống trường này!")
     };
     const add = async (customer) => {
+        console.log(customer)
         const res = {...customer, typeCustomer: JSON.parse(customer.typeCustomer)};
         const newCustomer = await addCustomer(res);
         customer.gender = +customer.gender;
@@ -84,8 +92,8 @@ export function CreateCustomer() {
                                 <option className="option" value>--Gender--</option>
                                 <option className="option" value="0">Nữ</option>
                                 <option className="option" value="1">Nam</option>
-
                             </Field>
+                            <ErrorMessage name="gender" component="span" style={{color: "red"}}></ErrorMessage>
                         </div>
                         <div className='mb-3'>
                             <label htmlFor='identity' className='form-label'>Số CMND/CCCD</label>
@@ -103,7 +111,7 @@ export function CreateCustomer() {
                             <ErrorMessage name="email" component="span" style={{color: "red"}}></ErrorMessage>
                         </div>
                         <div className='mb-3'>
-                            <label>Loại khách</label>
+                            <label style={{fontWeight: "bold"}}>Loại khách</label>
                             <Field as="select" className='form-control' name="typeCustomer">
                                 {
                                     types.map(type => (

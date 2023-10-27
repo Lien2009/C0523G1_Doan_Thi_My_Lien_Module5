@@ -1,9 +1,11 @@
 import axios from "axios";
 const URL_CUSTOMER = "http://localhost:8080/customers"
 const URL_TYPE_CUSTOMER = "http://localhost:8080/typeCustomer"
-export const getAll = async (name, typeCustomer, currentPage) => {
+export const getAll = async (name, typeCustomer, currentPage,sizePage) => {
     try{
-        const res = await axios.get(URL_CUSTOMER+`?name_like=${name}&typeCustomer.name_like=${typeCustomer}&_page=${currentPage}&_limit=5`)
+        const res =
+            await axios.get(URL_CUSTOMER
+                +`?name_like=${name}&typeCustomer.name_like=${typeCustomer}&_page=${currentPage}&_limit=${sizePage}&_sort=id&_order=desc`)
         return res;
     }catch (e){
         alert("Hiển thị bị lỗi!")

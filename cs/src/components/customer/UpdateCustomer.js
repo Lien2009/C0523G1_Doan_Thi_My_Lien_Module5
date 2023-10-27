@@ -42,6 +42,7 @@ export function UpdateCustomer() {
     const validateObject = {
         name: Yup.string()
             .required("Không để trống trường này!"),
+            // .matches(/^[^\d\s]+|[\w\S*]+$/,"Không đúng định dạng!"),
         dateOfBirth: Yup.string()
             .required("Không để trống trường này!"),
         identity: Yup.string()
@@ -51,8 +52,6 @@ export function UpdateCustomer() {
         email: Yup.string()
             .required("Không để trống trường này!")
             .matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, "Không đúng định dạng!"),
-        // typeCustomer: Yup.string()
-        //     .required("Không để trống trường này!"),
         address: Yup.string()
             .required("Không để trống trường này!")
     };
@@ -68,7 +67,7 @@ export function UpdateCustomer() {
         address: customer.address
     }
     return (
-        customer ? (
+        customer &&
         <>
             <Formik
                 initialValues={initialValues}
@@ -134,6 +133,5 @@ export function UpdateCustomer() {
                 </div>
             </Formik>
         </>
-        ) : ("Không có KH")
     )
 }

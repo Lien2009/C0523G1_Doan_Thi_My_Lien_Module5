@@ -41,28 +41,12 @@ export function UpdateContract(){
             .required("Không để trống trường này!")
             .min(1, "Số tiền > 0!"),
     }
-    const initValue = contract ? {
-        id: contract.id,
-        contractNumber: contract.contractNumber,
-        startDate: contract.startDate,
-        endDate: contract.endDate,
-        deposit: contract.deposit,
-        cost: contract.cost
-    } :{
-        id: "",
-        contractNumber: "",
-        startDate: "",
-        endDate: "",
-        deposit: 0,
-        cost: 0
-    }
-
 
     return (
-        contract ? (
+        contract &&
             <>
                 <Formik
-                    initialValues={initValue}
+                    initialValues={contract}
                     onSubmit={(values) => {
                         update(values)
                     }}
@@ -100,6 +84,5 @@ export function UpdateContract(){
                     </div>
                 </Formik>
             </>
-        ) : ("Không có HĐ này")
     )
 }

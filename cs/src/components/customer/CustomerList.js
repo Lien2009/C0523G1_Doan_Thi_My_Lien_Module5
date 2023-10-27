@@ -4,24 +4,33 @@ import {Link, NavLink} from "react-router-dom";
 import {DeleteCustomer} from "./DeleteCustomer";
 import Page from "../common/Page";
 import PageList from "../common/Page";
+import {Field} from "formik";
 
 export default function CustomerList() {
     const [customers, setCustomers] = useState([]);
     const [deleteCustomer, setDeleteCustomer] = useState({});
     const [isShowModal, setShowModal] = useState(false);
     const [name, setName] = useState("");
-    const [typeCustomer, setTypeCustomer] = useState({});
+    const [typeCustomer, setTypeCustomer] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [totalCustomers, setTotalCustomers] = useState(0);
-
+    let sizePage = 5;
+    const [types, setTypes] = useState([]);
+    useEffect(() => {
+        displayTypes()
+    }, []);
+    const displayTypes = async () => {
+        const res = await customerService.getTypeCustomer();
+        setTypes(res);
+    }
     useEffect(() => {
         display()
-    }, [name, typeCustomer, currentPage]);
+    }, [name, typeCustomer, currentPage, sizePage]);
     const display = async () => {
-        const res = await customerService.getAll(name, typeCustomer, currentPage);
+        const res = await customerService.getAll(name, typeCustomer, currentPage, sizePage);
         setCustomers(res.data);
         setTotalCustomers(res.headers["x-total-count"])
-        console.log(customers)
+
     }
     const handleModal = async (value) => {
         setShowModal(true);
@@ -38,12 +47,18 @@ export default function CustomerList() {
         <div className="container" style={{minHeight: "510px"}}>
             <h1>Danh sách khách hàng</h1>
             <NavLink to="/customers/create">
-                <button>Thêm mới</button>
+                <button className="btn btn-outline-primary mb-3">Thêm mới</button>
             </NavLink>
             <div>
-                <input type="text" placeholder="Nhập tên" onChange={(event) => setName(event.target.value)}/>
-                <input type="text" className="ms-2" placeholder="Nhập loại khách"
-                       onChange={(event) => setTypeCustomer(event.target.value)}/>
+                <input className="form-select-lg mb-3 w-25" type="text" placeholder="Nhập tên" onChange={(event) => setName(event.target.value)}/>
+                <select style={{marginLeft: "485px"}} className="form-select form-select-lg mb-3 w-25" onChange={(event) => setTypeCustomer(event.target.value)}>
+                    <option className="option" value="">--Loại khách--</option>
+                    {
+                        types.map(type => (
+                            <option key={type.id} value={type.name}>{type.name}</option>
+                        ))
+                    }
+                </select>
             </div>
             <table className="table table-striped" id="example">
                 <thead>
@@ -63,12 +78,12 @@ export default function CustomerList() {
                 </thead>
                 {customers.length > 0 ? (
                     <tbody>
-                    {customers.map(customer => (
+                    {customers.map((customer, index) => (
                             <tr key={customer.id}>
-                                <td>{customer.id}</td>
+                                <td>{index + 1}</td>
                                 <td>{customer.name}</td>
                                 <td>{customer.dateOfBirth}</td>
-                                <td>{customer.gender === 0 ? 'nữ' : 'nam'}</td>
+                                <td>{customer.gender === 0 ? "nữ" : 'nam'}</td>
                                 <td>{customer.identity}</td>
                                 <td>{customer.phone}</td>
                                 <td>{customer.email}</td>
@@ -97,6 +112,7 @@ export default function CustomerList() {
                 currentPage={currentPage}
                 totalItem={totalCustomers}
                 onPageChange={setCurrentPage}
+                sizePage={sizePage}
             ></PageList>
         </div>
 

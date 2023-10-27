@@ -12,17 +12,34 @@ function Header() {
                 </a>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link">
-                                Home
+                        {/*<li className="nav-item">*/}
+                        {/*    <a className="nav-link">*/}
+                        {/*        Home*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Facility
                             </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link">
-                                <NavLink to="/" className="style-link">
-                                    Facilities
-                                </NavLink>
-                            </a>
+                            <ul className="dropdown-menu on" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <NavLink to="/villas" className="dropdown-item">
+                                        Villa
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/houses" className="dropdown-item">
+                                        House
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/rooms" className="dropdown-item">
+                                        Room
+                                    </NavLink>
+                                </li>
+
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link">

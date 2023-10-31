@@ -55,8 +55,8 @@ export function CreateCustomer() {
     const add = async (customer) => {
         console.log(customer)
         const res = {...customer, typeCustomer: JSON.parse(customer.typeCustomer)};
-        const newCustomer = await addCustomer(res);
         customer.gender = +customer.gender;
+        const newCustomer = await addCustomer(res);
         if (newCustomer.status === 201) {
             toast("Thêm mới thành công!");
             navigate("/customers");

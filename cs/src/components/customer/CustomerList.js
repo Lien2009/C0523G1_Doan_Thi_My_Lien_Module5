@@ -21,16 +21,19 @@ export default function CustomerList() {
     }, []);
     const displayTypes = async () => {
         const res = await customerService.getTypeCustomer();
+        console.log(res)
         setTypes(res);
     }
     useEffect(() => {
         display()
-    }, [name, typeCustomer, currentPage, sizePage]);
+    }, [name, typeCustomer]);
     const display = async () => {
-        const res = await customerService.getAll(name, typeCustomer, currentPage, sizePage);
+        console.log(name)
+        console.log(typeCustomer)
+        const res = await customerService.getAll(name, typeCustomer);
         setCustomers(res.data);
         setTotalCustomers(res.headers["x-total-count"])
-
+        console.log(customers)
     }
     const handleModal = async (value) => {
         setShowModal(true);
